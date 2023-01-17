@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<head>
+  <title th:text="${pageTitle}">Modify Car</title>
+</head>
+<body>
+<form action="#" th:action="@{/updateCar/{id}(id=${car.id})}" th:object="${car}" method="post">
+  <label for="brand">Brand of car:</label>
+  <input type="text" th:field="*{brand}" id="brand" placeholder="Brand of Car">
+  <br>
+  <label for="model">Model of Car:</label>
+  <input type="text" th:field="*{model}" id="model" placeholder="Model of Car">
+  <br>
+  <label for='horsePower'>Horsepower of bicycle:</label>
+  <input type="text" th:field="*{horsePower}" id="horsePower" placeholder="Horsepower of Car">
+  <br>
+  <input type="submit" value="Modify car">
+  <a href="/">Cancel</a>
+</form>
+</body>
+</html>

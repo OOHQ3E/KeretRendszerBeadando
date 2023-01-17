@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+    <title th:text="${pageTitle}">OOHQ3E - Admin page</title>
+</header>
+<body>
+<a href="/">Go back to home page</a>
+
+<article th:each="user : ${users}">
+    <section>
+        <h4>Username:</h4>
+        <p th:text="${user.uname}"></p>
+    </section>
+    <p hidden th:text="${user.id}" ></p>
+    <section>
+        <h4>Authority:</h4>
+        <p th:text="${user.auth}"></p>
+    </section>
+
+    <a th:href="@{http://localhost:8080/editUser/{id}(id=${user.id})}">Modify User</a>
+    <a th:href="@{http://localhost:8080/deleteUser/{id}(id=${user.id})}">Delete User</a>
+</article>
+</body>

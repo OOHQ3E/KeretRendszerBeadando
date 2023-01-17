@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+    <title th:text="${pageTitle}">OOHQ3E - Cars</title>
+</header>
+<body>
+<a href="/">Go back to home page</a>
+<p><a th:href="@{http://localhost:8080/addCar}">Add a new car</a></p>
+<article th:each="car : ${cars}">
+    <section>
+        <h4>Brand:</h4>
+        <p th:text="${car.brand}"></p>
+    </section>
+    <p hidden th:text="${car.id}" ></p>
+    <section>
+        <h4>Model of Car:</h4>
+        <p th:text="${car.model}"></p>
+    </section>
+    <section>
+        <h4>Horsepower of car:</h4>
+        <p th:text="${car.horsePower}"></p>
+    </section>
+    <a th:href="@{http://localhost:8080/updateCar/{id}(id=${car.id})}">Modify Car</a>
+    <a th:href="@{http://localhost:8080/deleteCar/{id}(id=${car.id})}">Delete Car</a>
+</article>
+</body>

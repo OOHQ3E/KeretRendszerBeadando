@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+    <title th:text="${pageTitle}">OOHQ3E - Rollerscooters</title>
+</header>
+<body>
+<a href="/">Go back to home page</a>
+<p><a th:href="@{http://localhost:8080/addRollerscooter}">Add a new rollerscooter</a></p>
+<article th:each="rollerscooter : ${rollerscooters}">
+    <section>
+        <h4>Brand of rollerscooter:</h4>
+        <p th:text="${rollerscooter.brand}"></p>
+    </section>
+    <p hidden th:text="${rollerscooter.id}" ></p>
+    <section>
+        <h4>Type of rollerscooter:</h4>
+        <p th:text="${rollerscooter.type}"></p>
+    </section>
+    <section>
+        <h4>Color of rollerscooter:</h4>
+        <p th:text="${rollerscooter.color}"></p>
+    </section>
+    <section>
+        <h4>MaxSpeed of rollerscooter: (km/h)</h4>
+        <p th:text="${rollerscooter.maxSpeed}"></p>
+    </section>
+    <a th:href="@{http://localhost:8080/updateRollerscooter/{id}(id=${rollerscooter.id})}">Modify rollerscooter</a>
+    <a th:href="@{http://localhost:8080/deleteRollerscooter/{id}(id=${rollerscooter.id})}">Delete rollerscooter</a>
+</article>
+</body>

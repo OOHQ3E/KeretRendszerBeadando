@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<head>
+  <title th:text="${pageTitle}">Modify Bicycle</title>
+</head>
+<body>
+<form action="#" th:action="@{/updateBicycle/{id}(id=${bicycle.id})}" th:object="${bicycle}" method="post">
+  <label for="brand">Brand of bicycle:</label>
+  <input type="text" th:field="*{brand}" id="brand" placeholder="Brand of bicycle">
+  <br>
+  <label for="type">Type of bicycle:</label>
+  <input type="text" th:field="*{type}" id="type" placeholder="Type of bicycle">
+  <br>
+  <label for='tyreSize'>Tyre size of bicycle:</label>
+  <input type="text" th:field="*{tyreSize}" id="tyreSize" placeholder="Tyresize of bicycle">
+  <br>
+  <label for='color'>Color of bicycle:</label>
+  <input type="text" th:field="*{color}" id="color" placeholder="Color of bicycle">
+  <br>
+  <input type="submit" value="Modify bicycle">
+  <a href="/">Cancel</a>
+</form>
+</body>
+</html>

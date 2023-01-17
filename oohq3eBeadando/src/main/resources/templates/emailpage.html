@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+    <title th:text="${pageTitle}">OOHQ3E - Send an email to admin</title>
+</header>
+<body>
+<form action="#" th:action="@{/sendmail}" th:object="${message}" method="post">
+    <label for="subject">Subject of email</label>
+    <input type="text" th:field="*{subject}" id="subject" placeholder="Subject of email">
+    <br><br>
+    <label for="content">Message of email</label>
+    <textarea  th:field="*{content}" id="content" placeholder="Message of email"></textarea>
+    <br><br>
+    <input type="submit" value="Send mail to admin">
+    <a href="/">Cancel</a>
+</form>
+</body>
+</html>

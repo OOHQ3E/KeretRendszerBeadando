@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+  <title th:text="${pageTitle}">OOHQ3E - Add a new rollerscooter</title>
+</header>
+<body>
+<form action="#" th:action="@{/addRollerscooter}" th:object="${rollerscooter}" method="post">
+  <label for="brand">Brand Of rollerscooter</label>
+  <input type="text" th:field="*{brand}" id="brand" placeholder="Brand of rollerscooter">
+  <br><br>
+  <label for="type">Type of rollerscooter</label>
+  <input type="text" th:field="*{type}" id="type" placeholder="Type of rollerscooter">
+  <br><br>
+  <label for="maxSpeed">Max Speed of rollerscooter (km/h)</label>
+  <input type="text" th:field="*{maxSpeed}" id="maxSpeed">
+  <br><br>
+  <label for="color">Color of rollerscooter</label>
+  <input type="text" th:field="*{color}" id="color">
+  <br><br>
+  <input type="submit" value="Add a new rollerscooter to database">
+  <a href="/">Cancel</a>
+</form>
+</body>
+</html>

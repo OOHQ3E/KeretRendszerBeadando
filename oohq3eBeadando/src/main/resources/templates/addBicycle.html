@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+  <title th:text="${pageTitle}">OOHQ3E - Add a new bicycle</title>
+</header>
+<body>
+<form action="#" th:action="@{/addBicycle}" th:object="${bicycle}" method="post">
+  <label for="brand">Brand Of Bicycle</label>
+  <input type="text" th:field="*{brand}" id="brand" placeholder="Brand of bicycle">
+  <br><br>
+  <label for="type">Type of Bicycle</label>
+  <input type="text" th:field="*{type}" id="type" placeholder="Type of Bicycle">
+  <br><br>
+  <label for="tyreSize">Tyresize of Bicycle (inches)</label>
+  <input type="text" th:field="*{tyreSize}" id="tyreSize">
+  <br><br>
+  <label for="color">Color of Bicycle</label>
+  <input type="text" th:field="*{color}" id="color">
+  <br><br>
+  <input type="submit" value="Add a new bicycle to database">
+  <a href="/">Cancel</a>
+</form>
+</body>
+</html>

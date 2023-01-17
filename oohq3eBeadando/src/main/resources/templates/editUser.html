@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<head>
+  <title th:text="${pageTitle}">Modify User</title>
+</head>
+<body>
+<form action="#" th:action="@{/editUser/{id}(id=${user.id})}" th:object="${user}" method="post">
+  <label for="uname">Username of user:</label>
+  <input type="text" th:field="*{uname}" id="uname" placeholder="Username of user">
+  <br>
+  <label for='auth'>Authority of user:</label>
+  <input type="text" th:field="*{auth}" id="auth" placeholder="Authority of user">
+  <br>
+  <input type="submit" value="Modify user">
+  <a href="/">Cancel</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<header>
+    <title th:text="${pageTitle}">OOHQ3E - Bicycles</title>
+</header>
+<body>
+<a href="/">Go back to home page</a>
+<p><a th:href="@{http://localhost:8080/addBicycle}">Add a new bicycle</a></p>
+<article th:each="bicycle : ${bicycles}">
+    <section>
+        <h4>Brand of Bicycle:</h4>
+        <p th:text="${bicycle.brand}"></p>
+    </section>
+    <p hidden th:text="${bicycle.id}" ></p>
+    <section>
+        <h4>Type of Bicycle:</h4>
+        <p th:text="${bicycle.type}"></p>
+    </section>
+    <section>
+        <h4>Color of Bicycle:</h4>
+        <p th:text="${bicycle.color}"></p>
+    </section>
+    <section>
+        <h4>Tyresize of Bicycle:</h4>
+        <p th:text="${bicycle.tyreSize}"></p>
+    </section>
+    <a th:href="@{http://localhost:8080/updateBicycle/{id}(id=${bicycle.id})}">Modify bicycle</a>
+    <a th:href="@{http://localhost:8080/deleteBicycle/{id}(id=${bicycle.id})}">Delete bicycle</a>
+</article>
+</body>

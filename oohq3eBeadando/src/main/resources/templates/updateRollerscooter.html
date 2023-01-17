@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<head>
+    <title th:text="${pageTitle}">Modify Rollerscooter</title>
+</head>
+<body>
+<form action="#" th:action="@{/updateRollerscooter/{id}(id=${rollerscooter.id})}" th:object="${rollerscooter}" method="post">
+    <label for="brand">Brand of rollerscooter:</label>
+    <input type="text" th:field="*{brand}" id="brand" placeholder="Brand of rollerscooter">
+    <br>
+    <label for="type">Type of rollerscooter:</label>
+    <input type="text" th:field="*{type}" id="type" placeholder="Type of rollerscooter">
+    <br>
+    <label for='maxSpeed'>Maxspeed of rollerscooter:</label>
+    <input type="text" th:field="*{maxSpeed}" id="maxSpeed" placeholder="Maxspeed of rollerscooter">
+    <br>
+    <label for='color'>Color of rollerscooter:</label>
+    <input type="text" th:field="*{color}" id="color" placeholder="Color of rollerscooter">
+    <br>
+    <input type="submit" value="Modify rollerscooter">
+    <a href="/">Cancel</a>
+</form>
+</body>
+</html>
