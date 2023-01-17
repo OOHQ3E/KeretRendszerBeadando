@@ -51,7 +51,7 @@ public class IndexController {
     }
     @PostMapping("/sendmail")
     public String SendMail(Model model, Message message){
-        System.out.println(message.getSubject() + " " + message.getContent());
+        //System.out.println(message.getSubject() + " " + message.getContent());
         SimpleMailMessage tempmessage = new SimpleMailMessage();
         tempmessage.setSubject(message.getSubject());
         tempmessage.setTo("emailaddress");
